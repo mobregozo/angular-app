@@ -1,0 +1,64 @@
+<div ng-controller="navBarCtrl">
+  <div class="navbar navbar-fixed-top nomargin">
+    <div class="navbar-inner">
+      <div class="container"> 
+        <a ng-href="#/">
+          <font size="5" color="white" class="brand" >
+            <i class="glyphicon glyphicon-shopping-cart" style="color:white;font-size: smaller;"></i>
+            <span>Gestion De Autos </span>
+          </font>
+        </a>
+        <div class="pull-right brand salir" ng-if="showExit()" ng-really-message="Estas Seguro De Que Desea Salir?" ng-really-click="logout()">
+          <span>
+            <i class="fa fa-sign-out"></i>
+            Salir
+          </span>
+        </div>
+        <!--/.nav-collapse --> 
+      </div>
+      <!-- /container --> 
+    </div>
+    <!-- /navbar-inner --> 
+  </div>    
+  <!-- /navbar -->
+  <div class="subnavbar" ng-if="!isActive('/login')">
+    <div class="subnavbar-inner">
+      <div class="container">
+        <ul class="mainnav">
+          <li ng-class="{ active: isActive('/')}">
+            <a ng-href="#/">
+              <i class="fa fa-dashboard"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li ng-if="false" ng-class="{ active: isActive('/reportes')}">
+            <a ng-href="#/reportes">
+              <i class="fa fa-bar-chart"></i>
+              <span>Reportes</span> 
+            </a> 
+          </li>
+          <li ng-class="{ active: isActive('/clientes')}">
+            <a ng-href="#/clientes">
+              <i class="fa fa-group"></i>
+              <span>Clientes</span> 
+            </a>
+          </li>
+          <li ng-class="{ active: isActive('/prestamos')}">
+            <a ng-href="#/prestamos">
+              <i class="fa fa-bar-chart"></i>
+              <span>Prestamos</span> 
+            </a> 
+          </li>
+          <li ng-if="false" ng-class="{ active: isActive('/historial')}">
+            <a ng-href="#/historial">
+              <i class=" fa fa-calendar">
+              </i><span>Historial</span> 
+            </a> 
+          </li>
+        </ul>
+      </div>
+      <!-- /container --> 
+    </div>
+    <!-- /subnavbar-inner --> 
+  </div>
+</div>

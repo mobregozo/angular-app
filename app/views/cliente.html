@@ -1,0 +1,316 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Editar Datos del Cliente</h3>
+    </div>
+    <div class="modal-body pull-left">      
+        <div>      
+            <form name="userForm" >            
+                <div class="col-xs-12 nopadding">
+                    <h3>Datos Personales</h2>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.name.$invalid }">
+                    <label>Nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="name" class="form-control" ng-model="userF.name" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.surname.$invalid }">
+                    <label>Apellido</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="surname" class="form-control" ng-model="userF.surname" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.nick.$invalid }">
+                    <label>Apodo</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="nick" class="form-control" ng-model="userF.nick" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.birth_day.$invalid }">
+                    <label>Fecha Nacimiento</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input placeholder="yyyy-MM-dd" type="date" name="birth_day" min="1900-01-01" max="2050-12-31" class="form-control" ng-model="userF.birth_day" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.payment_day.$invalid }">
+                    <label>Fecha de Pago</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input placeholder="yyyy-MM-dd" type="date" name="payment_day" class="form-control" ng-model="userF.payment_day" required />
+                    </div>
+                </div>                
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.nro_documento.$invalid }">
+                    <label>DNI</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="8" ng-minlength="7" type="number" name="nro_documento" class="form-control"  ng-model="userF.nro_documento" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.phone.$invalid }">
+                    <label>Telefono</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <input ng-pattern="/^[0-9]*$/" ng-maxlength="13" ng-minlength="11" type="text" name="phone" class="form-control" ng-model="userF.phone" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.email.$invalid }">
+                    <label>Email</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class=" fa fa-envelope"></i>
+                        </div>
+                        <input type="email" name="email" class="form-control"  ng-model="userF.email" />
+                    </div>
+                </div>
+                <div class="col-xs-12 nopadding">
+                    <h3>Direccion</h2>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.address.$invalid }">
+                    <label>Calle</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="30" ng-minlength="3" type="text" name="address" class="form-control"  ng-model="userF.address" required />
+                    </div>
+                </div>                
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.address_number.$invalid }">
+                    <label>Altura</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="5" ng-minlength="1" type="text" name="address_number" class="form-control"  ng-model="userF.address_number" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.address_dpto.$invalid }">
+                    <label>Dpto</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="6" ng-minlength="0" type="text" name="address_dpto" class="form-control"  ng-model="userF.address_dpto" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-6" ng-class="{ 'has-error': userForm.zone.$invalid }">
+                    <label>Zona</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="zone" class="form-control"  ng-model="userF.zone" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-3 col-md-3" ng-class="{ 'has-error': userForm.position.$invalid }">
+                    <label>Orden</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-pattern="/^[0-9]*$/" ng-maxlength="3" ng-minlength="1" type="number" name="position" class="form-control" ng-model="userF.position" required />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="ok()">Guardar</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancelar</button>
+    </div>
+</script>
+<div ng-include="'views/loan-modal.html'"></div>
+<div class="content col-xs-12 m-nopadding">
+    <h1>Clientes</h1><br>
+    <div class="col-xs-12  nopadding m-nopadding" ng-show="createNewUser">
+        <div class="client-row col-xs-12"> 
+            <font size="5" style="margin-bottom:15px">
+                Datos Personales
+            </font>
+            <div class=" pull-right button-add" >
+                <button ng-click="backToList()" class="btn btn-info btn-md">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Volver
+                </button>
+            </div>
+        </div>
+        <div class="col-xs-12 nopadding">
+            <form name="userForm" class="col-xs-12 nopadding" novalidate>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.name.$invalid }">
+                    <label>Nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="name" class="form-control" ng-model="user.name" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.surname.$invalid }">
+                    <label>Apellido</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="surname" class="form-control" ng-model="user.surname" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.nick.$invalid }">
+                    <label>Apodo</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="nick" class="form-control" ng-model="user.nick" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.birth_day.$invalid }">
+                    <label>Fecha Nacimiento</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input placeholder="yyyy-MM-dd" type="date" name="birth_day" min="1900-01-01" max="2050-12-31" class="form-control" ng-model="user.birth_day" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.payment_day.$invalid }">
+                    <label>Fecha de Pago</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input placeholder="yyyy-MM-dd" type="date" name="payment_day" class="form-control" ng-model="user.payment_day" required />
+                    </div>
+                </div>                
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.nro_documento.$invalid }">
+                    <label>DNI</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input ng-maxlength="8" ng-minlength="7" type="number" name="nro_documento" class="form-control"  ng-model="user.nro_documento" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.phone.$invalid }">
+                    <label>Telefono</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <input ng-pattern="/^[0-9]*$/" ng-maxlength="13" ng-minlength="11" type="text" name="phone" class="form-control" ng-model="user.phone" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.email.$invalid }">
+                    <label>Email</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class=" fa fa-envelope"></i>
+                        </div>
+                        <input type="email" name="email" class="form-control"  ng-model="user.email" />
+                    </div>
+                </div>
+                <div class="col-xs-12 nopadding">
+                    <h3>Direccion</h2>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.address.$invalid }">
+                    <label>Calle</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="30" ng-minlength="3" type="text" name="address" class="form-control"  ng-model="user.address" required />
+                    </div>
+                </div>                
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.address_number.$invalid }">
+                    <label>Altura</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="5" ng-minlength="1" type="text" name="address_number" class="form-control"  ng-model="user.address_number" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.address_dpto.$invalid }">
+                    <label>Dpto</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="6" ng-minlength="0" type="text" name="address_dpto" class="form-control"  ng-model="user.address_dpto" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-5 col-md-4" ng-class="{ 'has-error': userForm.zone.$invalid }">
+                    <label>Zona</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-maxlength="25" ng-minlength="1" type="text" name="zone" class="form-control"  ng-model="user.zone" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-3 col-md-3" ng-class="{ 'has-error': userForm.position.$invalid }">
+                    <label>Orden</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <input ng-pattern="/^[0-9]*$/" ng-maxlength="3" ng-minlength="1" type="number" name="position" class="form-control" ng-model="user.position" required />
+                    </div>
+                </div>
+                <div class="form-group col-sm-12 text-left" ><br>
+                    <button class="btn btn-primary btn-success btn-md form-button"  ng-disabled="userForm.$invalid" ng-click="saveClient(user)">Agregar Cliente</button>
+                    <button class="btn btn-md btn-warning form-button" ng-click="reset()">Resetear Formulario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-xs-12 nopadding m-nopadding" ng-show="!createNewUser">
+        <div class="client-row">
+            <div class="col-xs-12 col-sm-5 pull-left nopadding" style="margin-top:5px">   
+                <div class="input-group">
+                  <span class="input-group-addon">Buscar</span>
+                  <input type="text" class="form-control" ng-model="text_search" placeholder="Buscar cliente">
+                </div>
+            </div>
+            <div class=" pull-right button-add" >
+                <button ng-click="addClient()" class="btn btn-info btn-md">+ Agregar Cliente</button>
+            </div>
+        </div>
+        <table class="table table-hover table-bordered" bs-table>
+            <thead>
+                <tr>
+                    <th ng-click="predicate='name'; reverse=!reverse">Nombre</th>
+                    <th ng-click="predicate='surname'; reverse=!reverse">Apellido</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="client in clientList |filter:text_search| orderBy:predicate:reverse">
+                    <td>{{client.name}}</td>
+                    <td>{{client.surname}}</td>
+                    <td class="action-column text-center">
+                        <button type="button" class="btn btn-success btn-sm action-item" ng-click="openLoanModel('md',client)">Ver Prestamos</button>
+                        <button type="button" class="btn btn-info btn-sm action-item" ng-click="open('md',client)">Modificar</button>
+                        <button type="button" class="btn btn-danger btn-sm action-item" ng-really-message="Estas Seguro Que Deseas Borrar El Cliente?" ng-really-click="removeClient(client)" >Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

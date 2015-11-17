@@ -1,0 +1,50 @@
+<script type="text/ng-template" id="loan-modal.html">
+    <div class="modal-header">
+    	<i class="fa fa-times pull-right close fa-2x" ng-click="cancel()"></i>
+        <font size="4" class="modal-title">
+        	Prestamos del cliente :
+        	<strong> {{client.name+', '+client.surname}}</strong>         	
+        </font>
+    </div>
+    <div class="modal-body clearfix">   
+    	<div>    
+	    	<div class="col-md-12 text-center thumbnail" ng-repeat="loan in clientLoans" >
+	    		<h5>
+	    			<strong>Prestamo :</strong>{{loan.name}} - 
+	    			<strong>Cliente :</strong>{{loan.customer.name}} - 
+	    			<strong>Auto Prestado :</strong>{{loan.borrowed_car}}$
+	    		</h5>
+	    		<button type="button" class="btn btn-info btn-block" ng-click="loanHandler.openLoan(loan)">Ver Detalless</button>
+				<hr style="margin:5px 0">
+				<div collapse="!loan.isCollapsed">
+				  <div class="table-responsive">          
+					  <table class="table table-striped">
+					    <tbody >
+							<tr ng-repeat="pay in loan.pays">
+								<td  class="loan-row"ng-class="{'row-selected' : pay.selected}">
+								    <span style="padding:5px" class="label" ng-class="{'label-danger': !pay.done_pay, 'label-success': pay.done_pay}">
+								        	{{pay.done_pay? 'pagado ': 'no pagado '}}
+								    </span>							
+								    <span>&nbsp; Cuota numero {{pay.number_fee}} de {{loan.amount_fee}} - Fecha: {{pay.assigned_payment_day}} - {{pay.payment}} $
+									</span>
+								    <div class="btn-group group-margin" ng-if="!pay.done_pay">
+								        <label class="btn btn-info btn-xs" ng-click="loanHandler.selectPay(loan,pay)" 
+								        ng-class="{'btn-danger': pay.selected, 'btn-success': !pay.selected}">
+								           {{pay.selected? 'X':'Cobrar Cuota'}}
+								        </label>
+								    </div> 
+								</td>
+							</tr>					      
+		                    <tr class="text-center" ng-if="loan.isCollapsed" >
+		                        <td colspan="4" class="text-right">                            
+		                            <button ng-click="goToPayment(loan)" ng-disabled="loan.selectedList.length == 0" class="btn btn-success btn-xs" ng-show="loan.isCollapsed">Cobrar Seleccionados</button>
+		                        </td>
+		                    </tr>
+					    </tbody>
+					  </table>
+				  </div>
+				</div>
+			</div>
+		</div>
+    </div>
+</script>

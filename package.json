@@ -1,0 +1,20 @@
+{
+  "name": "gestion-automotores",
+  "version": "0.0.3",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-bower-task": "~0.4.0",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-compress": "~0.9.1",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-html2js": "~0.2.7"
+  },
+  "dependencies": {
+    "grunt-contrib-less": "^1.0.1"
+  }
+}

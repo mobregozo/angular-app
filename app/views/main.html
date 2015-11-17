@@ -1,0 +1,63 @@
+<div class="content col-xs-12 m-nopadding">
+	<h1>Inicio</h1><br>
+    <!-- /.row -->
+    <div class="col-xs-12 nopadding">
+        <div class="col-xs-12 m-nopadding">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Estado De Alquileres al {{date | date:'yyyy-MM-dd'}} 
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <table class="table table-hover table-bordered" bs-table>
+                        <thead>
+                            <tr>
+                                <th ng-click="predicate='name'; reverse=!reverse">Nombre</th>
+                                <th ng-click="predicate='surname'; reverse=!reverse">Apellido</th>
+                                <th ng-click="predicate='car'; reverse=!reverse">Auto Prestado</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="pay in payments| orderBy:predicate:reverse">
+                                <td>{{pay.name}}</td>
+                                <td>{{pay.surname}}</td>
+                                <td>{{pay.borrowed_car}}</td>
+                                <td class="text-center">    
+                                    <button class="btn btn-primary btn-xs" ng-click="goToPayment(pay)">Cobrar</button>   
+                                    <button class="btn btn-warning btn-xs">Posponer</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-print"></i> Panel de Impresiones
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div>
+                        <h4>Seleccionar Dia</h4>
+                        <input placeholder="yyyy-MM-dd" type="date" name="birth_day" min="2015-07-14" max="2050-12-31" class="form-control" ng-model="print.day" required />
+                        <div class="text-center">
+                            <div ng-show="printError" class="alert alert-danger" style="margin:10px 0 0 0">{{printError}}</div>
+                        </div>
+                    </div>
+                    <!-- /.list-group -->
+                    <button class="btn btn-default btn-block" ng-click="printPayments(print.day)" style="margin-top:15px">Imprimir Cobros</button>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel .chat-panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->

@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Gestion De Alquiler de Autos</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel=icon href="app/images/car.ico "sizes="48x48" type="image/vnd.microsoft.icon">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"rel="stylesheet">
+    <link href="app/styles/style.css" rel="stylesheet">
+    <link href="app/styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="gestionDeAutosApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- HEADER -->
+    <div ng-include="'app/views/header.html'"></div>
+
+    <div class="container">
+    <div ng-view=""></div>
+    </div>
+    
+    <!-- build:js(.) scripts/vendor.js --> 
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="app/scripts/app.js"></script>
+    <script src="app/scripts/services.js"></script>
+    <script src="app/scripts/directives.js"></script>
+    <script src="app/scripts/controllers/main.js"></script>
+    <script src="app/scripts/controllers/header.js"></script>
+    <script src="app/scripts/controllers/cliente.js"></script>
+    <script src="app/scripts/controllers/prestamos.js"></script>
+    <script src="app/scripts/controllers/login.js"></script>
+    <!-- endbuild -->
+    <script src="app/scripts/bs-table.min.js"></script>
+</body>
+</html>
